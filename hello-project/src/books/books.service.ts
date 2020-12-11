@@ -19,6 +19,7 @@ export class BooksService {
         await book.save();
         return book;
     }
+    
     async getAllBooks(): Promise<BookEntity[]> {
         // const user: UserEntity = await UserEntity.findOne({where: {id: 2}, relations: ['books']});
         return BookEntity.find();
