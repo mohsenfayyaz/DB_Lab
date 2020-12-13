@@ -9,6 +9,7 @@ import UpdateBookDto from './dto/update-book.dto';
 export default class BooksController {
     constructor(private readonly bookService: BooksService) { }
 
+    @ApiBearerAuth()
     @ApiResponse({
         status: 201,
         description: 'Add Book'
@@ -18,6 +19,7 @@ export default class BooksController {
         return this.bookService.insert(book);
     }
 
+    @ApiBearerAuth()
     @ApiResponse({
         status: 200,
         description: 'Get Books'
@@ -27,6 +29,7 @@ export default class BooksController {
         return this.bookService.getAllBooks();
     }
 
+    @ApiBearerAuth()
     @ApiResponse({ status: 200, description: "Delete Book" })
     @ApiBearerAuth()
     @ApiQuery({
@@ -40,6 +43,7 @@ export default class BooksController {
         return this.bookService.delete(bookID);
     }
 
+    @ApiBearerAuth()
     @ApiResponse({ status: 200, description: "Update Book" })
     @ApiBearerAuth()
     @Put('update')

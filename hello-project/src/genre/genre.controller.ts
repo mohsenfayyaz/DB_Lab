@@ -8,10 +8,13 @@ import UpdateGenreDto from './dto/update-genre.dto';
 export default class GenreController {
     constructor(private readonly genreServices: GenreServices) { }
     
+    @ApiBearerAuth()
     @Post('post')
     postGenre(@Body() genre: CreateGenreDto) {
         return this.genreServices.insert(genre);
     }
+
+    @ApiBearerAuth()
     @Get()
     getAll() {
         return this.genreServices.getAllGenre();
