@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export default class CreateSubTaskDto {
+export default class CreateItemDto {
     @ApiProperty({ type: String })
     readonly text: string;
 

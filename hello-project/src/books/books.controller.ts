@@ -31,7 +31,6 @@ export default class BooksController {
 
     @ApiBearerAuth()
     @ApiResponse({ status: 200, description: "Delete Book" })
-    @ApiBearerAuth()
     @ApiQuery({
         name: 'bookID',
         required: true,
@@ -45,7 +44,6 @@ export default class BooksController {
 
     @ApiBearerAuth()
     @ApiResponse({ status: 200, description: "Update Book" })
-    @ApiBearerAuth()
     @Put('update')
     updateBook(@Body() book: UpdateBookDto) {
         return this.bookService.update(book);
